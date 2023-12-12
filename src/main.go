@@ -79,6 +79,11 @@ func closeSrvrs(srvrs []*http.Server) {
 func main() {
 	flag.Parse()
 
+    if len(ports) <= 0 {
+        fmt.Println("Nothing to do...")
+        return
+    }
+
 	fmt.Println("Serving the following ping servers:")
 
 	var wg sync.WaitGroup
